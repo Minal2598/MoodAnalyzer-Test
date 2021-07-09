@@ -3,6 +3,10 @@ package com.test;
 public class MoodAnalyzer {
 	private String message;
 
+	public String getMessage() {
+		return message;
+	}
+
 	// Default Constructor
 	public MoodAnalyzer() {
 		this.message = null;
@@ -16,11 +20,15 @@ public class MoodAnalyzer {
 
 	// Check Sad or Happy Mood
 	public String analyseMood() {
+		try {
+			if (message.toLowerCase().contains("sad"))
+				return "SAD";
 
-		if (message.toLowerCase().contains("sad"))
-			return "SAD";
+			return "HAPPY";
+		} catch (NullPointerException e) {
+			throw new NullPointerException("Invalid Name");
 
-		return "HAPPY";
+		}
 
 	}
 
