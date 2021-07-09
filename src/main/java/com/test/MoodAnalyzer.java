@@ -1,8 +1,21 @@
 package com.test;
 
 public class MoodAnalyzer {
-//Check 
-	public String analyseMood(String message) {
+	private String message;
+
+	// Default Constructor
+	public MoodAnalyzer() {
+		this.message = null;
+
+	}
+
+	// Parameterised Constructor
+	public MoodAnalyzer(String message) {
+		this.message = message;
+	}
+
+	// Check Sad or Happy Mood
+	public String analyseMood() {
 
 		if (message.toLowerCase().contains("sad"))
 			return "SAD";
